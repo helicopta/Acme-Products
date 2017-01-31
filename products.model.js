@@ -13,6 +13,24 @@ module.exports = {
 	getProducts: function(){
 		return _products;
 	},
+	addProduct: function(product){
+		let maxId=_products.reduce(function(max, product){
+			if(product.id>max){
+				max=product.id;
+			}
+			return max
+		},0);
+		product.id=maxId;
+		_products.push(product);
+		
+	},
+	editProduct: function(name){
+		var toEdit=this.getProducts().filter(function(product){
+			return product.name===name;
+		})[0];
+		toEdit.name=name;
+		
+	},
 	deleteProduct: function(id){
 		var toDelete=this.getProducts().filter(function(product){
 			return product.id===id;

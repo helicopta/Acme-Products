@@ -3,9 +3,16 @@
 <div class = 'greating'>
 	SALE!!!
 </div>
+{% if products.length===0%}
+	<div class ='well'>
+		You have no product!
+	</div>
+{% endif%}
+{%include './add.html'%}
 <ul class ='list-group'>
 	{% for product in products %}
-		{%include './index.html'%}	
+		{%include './index.html'%} {%include './edit.html'%}
+			
 	{% endfor %}
 </ul>
 {% endblock %} 
