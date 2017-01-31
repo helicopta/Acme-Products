@@ -1,0 +1,11 @@
+{% extends './layout.html'%}
+{% block main %}
+<div class = 'greating'>
+	SALE!!!
+</div>
+<ul class ='list-group'>
+	{% for product in products %}
+		{%include './index.html'%}	
+	{% endfor %}
+</ul>
+{% endblock %} 
