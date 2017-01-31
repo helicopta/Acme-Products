@@ -20,6 +20,11 @@ app.get('/',function(req,res,next){
 	res.render('home', {title:'Home'});
 });
 
+app.get('/products/update',function(req,res,next){
+	//products.editProduct(req.body);
+	res.render('update', {title:'update',});
+});
+
 app.get('/products',function(req,res,next){
 	res.render('products', {title:'Products',products:products.getProducts()});
 });
@@ -29,8 +34,8 @@ app.post('/products',function(req,res,next){
 	res.redirect('/products');
 });
 
-app.patch('/products/:id',function(req,res,next){
-	products.editProduct(req.body);
+app.patch('/products/:name',function(req,res,next){
+	products.editProduct(req.params.name);
 	res.redirect('/products');
 });
 

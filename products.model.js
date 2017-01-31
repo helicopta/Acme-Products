@@ -25,10 +25,6 @@ module.exports = {
 		
 	},
 	editProduct: function(name){
-		var toEdit=this.getProducts().filter(function(product){
-			return product.name===name;
-		})[0];
-		toEdit.name=name;
 		
 	},
 	deleteProduct: function(id){
