@@ -20,8 +20,10 @@ app.get('/',function(req,res,next){
 	res.render('home', {title:'Home'});
 });
 
+//you can use ()=> {} instead of function()
 app.get('/products/update',function(req,res,next){
 	//products.editProduct(req.body);
+	//give yourself room... {fizz:'buzz'} not good.. do { fizz: 'buzz' }
 	res.render('update', {title:'update',});
 });
 
@@ -34,6 +36,7 @@ app.post('/products',function(req,res,next){
 	res.redirect('/products');
 });
 
+//use a router so you don't have to keep on repeating /products
 app.patch('/products/:name',function(req,res,next){
 	products.editProduct(req.params.name);
 	res.redirect('/products');
@@ -45,5 +48,6 @@ app.delete('/products/:id', function(req,res,next){
 });
 
 app.listen(process.env.PORT, function(){
+	//you can use backticks `listening on port ${port}`
 	console.log('listen on '+process.env.PORT);
 });
