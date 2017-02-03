@@ -28,6 +28,7 @@ module.exports = {
 		
 	},
 	deleteProduct: function(id){
+		//naming-- just call this product
 		var toDelete=this.getProducts().filter(function(product){
 			return product.id===id;
 		})[0];
